@@ -3,13 +3,13 @@ const calm = matchMedia('(prefers-reduced-motion: reduce)').matches;
 const msgs = ['Empty glass. Sad.', 'A little splash!', 'Getting there…', 'Almost…', 'Perfect. Cheers!'];
 let cups = 0;
 
-function seeds(x, y, n = 8) {
+function seeds(x, y, n = 8, extra = '') {
   if (calm) return;
   for (let i = 0; i < n; i++) {
     const s = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-    s.setAttribute('class', 'icon icon-sm seed');
+    s.setAttribute('class', 'icon icon-sm seed ' + extra);
     s.innerHTML = '<use href="#lemon"/>';
-    s.style.cssText = `left:${x}px;top:${y}px;--dx:${(Math.random() - 0.5) * 260}px;--r:${(Math.random() - 0.5) * 400}deg`;
+    s.style.cssText = `left:${x}px;top:${y}px;--dx:${(Math.random() - 0.5) * 260}px;--dy:${(Math.random() - 0.5) * 200}px;--r:${(Math.random() - 0.5) * 400}deg`;
     s.addEventListener('animationend', () => s.remove());
     document.body.append(s);
   }
@@ -63,3 +63,32 @@ if (pour) {
   });
   $('#drink').addEventListener('click', () => set(0));
 }
+
+// surpriseee honestly dissappointing
+$('#surpriseee')?.addEventListener('click', () => {
+  const cards = document.querySelectorAll('.stand-card');
+  cards.forEach(card => card.classList.remove('is-flipped'));
+  const pick = cards[Math.floor(Math.random() * cards.length)];
+  pick.classList.add('is-flipped');
+  pick.scrollIntoView({ behavior: 'smooth', block: 'center' });
+});
+
+// LET IT BLOWWW fizzy stuff
+$('#letitblow')?.addEventListener('click', () => {
+  for (let i = 0; i < 14; i++) {
+    setTimeout(() => seeds(-30, Math.random() * innerHeight, 1, 'gust'), i * 90);
+  }
+});
+
+// darkkkkk modeee for MY EYES
+const darkk = $('#darkk');
+const page = document.documentElement;
+
+function lightsOut(on) {
+  page.classList.toggle('lights-out', on);
+  darkk.textContent = on ? 'Light' : 'Dark';
+  localStorage.setItem('lights-out', on);
+}
+
+lightsOut(localStorage.getItem('lights-out') === 'true');
+darkk.addEventListener('click', () => lightsOut(!page.classList.contains('lights-out')));

@@ -1,16 +1,19 @@
-@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@500;700&family=Nunito:wght@400;700&display=swap');
+/* fonts slight edit honestly better */
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700&family=Figtree:wght@400;700&display=swap');
 
 /* Colors and type */
 :root {
-  --lemon: #ffd93b;
-  --lemon-deep: #f2b705;
-  --cream: #fff7dc;
-  --ink: #2b2118;
-  --leaf: #5db36b;
-  --pink: #ff8fa3;
+  /* colors edited once */
+  --lemon: #ffd000;
+  --lemon-deep: #ff9f1c;
+  --cream: #fff1e6;
+  --ink: #3a1c4a;
+  --leaf: #1fb5a0;
+  --pink: #ff5c8a;
 
-  --font-display: 'Fredoka', 'Trebuchet MS', system-ui, sans-serif;
-  --font-body: 'Nunito', 'Segoe UI', system-ui, sans-serif;
+  /* fonts */
+  --font-display: 'Baloo 2', 'Trebuchet MS', system-ui, sans-serif;
+  --font-body: 'Figtree', 'Segoe UI', system-ui, sans-serif;
   --fs-sm: 0.9rem;
   --fs-md: 1.1rem;
   --fs-lg: 1.5rem;
@@ -77,6 +80,8 @@ a { color: inherit; }
 .btn-outline { --btn-bg: var(--cream); }
 .btn-round { padding: 0.7rem; border-radius: 50%; }
 .btn-sm { padding: 0.35rem 1rem; font-size: var(--fs-sm); }
+/* new button new stylee */
+.btn-minty { --btn-bg: var(--leaf); }
 
 /* Hero */
 .hero { padding: 3.5rem 0 2.5rem; }
@@ -151,3 +156,15 @@ a { color: inherit; }
   .hero .wrap, .pour-grid { grid-template-columns: 1fr; }
   .hero-art { order: -1; }
 }
+
+/* Animations for blowing da lemonss*/
+.seed.gust { animation: gust 2.2s ease-in forwards; }
+@keyframes gust { to { transform: translate(calc(110vw - 50%), calc(var(--dy) - 50%)) rotate(var(--r)); } }
+
+/* dark colors I hope people like em  */
+.lights-out { --cream: #2a1d33; --ink: #fff1e6; }
+.lights-out :is(.site-header, .section-lemon, .card-back) { color: var(--cream); border-color: var(--cream); }
+.lights-out :is(.nav a:hover, .nav a[aria-current]) { color: var(--ink); }
+.lights-out .btn { --btn-ink: var(--cream); }
+.lights-out .btn-outline { --btn-ink: var(--ink); }
+.lights-out .marquee { background: var(--lemon); color: var(--cream); }
