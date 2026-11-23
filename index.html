@@ -1,83 +1,152 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="css/style.css"><title>Lemon Aid</title><link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍋</text></svg>"></head><body>
-<header class="site-header"><div class="wrap">
-  <a class="logo" href="index.html"><svg class="icon icon-md"><use href="#lemon"/></svg>Lemon Aid</a>
-  <nav><ul class="nav">
-    <li><a href="index.html" aria-current="page">Home</a></li>
-    <li><a href="gallery.html">Stands</a></li>
-    <li><a href="help.html">Help out</a></li>
-    <li><button class="btn btn-sm btn-outline" id="darkk">Dark</button></li>
-  </ul></nav>
-</div></header>
-<main>
-<section class="hero"><div class="wrap">
-  <div>
-    <h1>Every sidewalk deserves a lemonade stand.</h1>
-    <p>A little love letter to the kids, grandmas and neighbors who set up a table, pour a pitcher and make the block better.</p>
-    <div class="hero-actions">
-      <a class="btn" href="#pour-section">Pour a glass</a>
-      <a class="btn btn-pink" href="gallery.html">Meet the stands</a>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lemon Aid</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍋</text></svg>">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="logo" href="index.html"><svg class="icon icon-md"><use href="#lemon"></use></svg>Lemon Aid</a>
+      <nav aria-label="Main navigation">
+        <ul class="nav">
+          <li><a href="index.html" aria-current="page">Home</a></li>
+          <li><a href="gallery.html">Stands</a></li>
+          <li><a href="help.html">Help out</a></li>
+          <!-- Music button and volume slider -->
+          <li class="music-controls">
+            <button class="btn btn-sm btn-outline" id="music-button" type="button">Play music</button>
+            <input id="volume-slider" type="range" min="0" max="100" value="50" aria-label="Music volume">
+          </li>
+          <li><button class="btn btn-sm btn-outline" id="dark-toggle" type="button">Dark</button></li>
+        </ul>
+      </nav>
     </div>
-  </div>
-  <div class="hero-art">
-    <svg class="stand-art" viewBox="0 0 320 300" role="img" aria-label="A lemonade stand with a striped awning">
-      <path d="M52 112v168M268 112v168" fill="none"/>
-      <path class="f-cream" d="M26 56h268l20 56H6z"/>
-      <path class="f-lemon" d="M80 56h54l-4 56H68zM186 56h54l12 56h-62z"/>
-      <rect class="f-lemon" x="30" y="206" width="260" height="22" rx="6"/>
-      <rect class="f-cream" x="70" y="232" width="180" height="48" rx="8"/>
-      <text x="160" y="265" text-anchor="middle">Lemonade</text>
-      <use href="#cup" x="76" y="146" width="62" height="62" style="color:var(--ink);--icon-fill:var(--lemon)"/>
-      <use href="#cup" x="182" y="146" width="62" height="62" style="color:var(--ink);--icon-fill:var(--pink)"/>
-    </svg>
-    <div class="hero-lemon"><svg class="icon" data-squish data-seeds role="button" aria-label="Squish the lemon"><use href="#lemon"/></svg></div>
-  </div>
-</div></section>
+  </header>
 
-<div class="marquee" aria-hidden="true"><div class="marquee-track">
-  <span>Ice cold</span><svg class="icon icon-sm"><use href="#lemon"/></svg><span>Fresh squeezed</span><svg class="icon icon-sm"><use href="#sun"/></svg><span>Cash, coins and high fives</span><svg class="icon icon-sm"><use href="#heart"/></svg>
-</div></div>
+  <main>
+    <section class="hero">
+      <div class="wrap">
+        <div>
+          <h1>Every sidewalk deserves a lemonade stand.</h1>
+          <p>A little love letter to the kids, grandmas and neighbors who set up a table, pour a pitcher and make the block better.</p>
+          <div class="hero-actions">
+            <a class="btn" href="#pour-section">Pour a glass</a>
+            <a class="btn btn-pink" href="gallery.html">Meet the stands</a>
+          </div>
+        </div>
+        <div class="hero-art">
+          <svg class="stand-art" viewBox="0 0 320 300" role="img" aria-label="A lemonade stand with a striped awning">
+            <path d="M52 112v168M268 112v168" fill="none"></path>
+            <path class="f-cream" d="M26 56h268l20 56H6z"></path>
+            <path class="f-lemon" d="M80 56h54l-4 56H68zM186 56h54l12 56h-62z"></path>
+            <rect class="f-lemon" x="30" y="206" width="260" height="22" rx="6"></rect>
+            <rect class="f-cream" x="70" y="232" width="180" height="48" rx="8"></rect>
+            <text x="160" y="265" text-anchor="middle">Lemonade</text>
+            <use href="#cup" x="76" y="146" width="62" height="62" style="color:var(--ink);--icon-fill:var(--lemon)"></use>
+            <use href="#cup" x="182" y="146" width="62" height="62" style="color:var(--ink);--icon-fill:var(--pink)"></use>
+          </svg>
+          <div class="hero-lemon">
+            <button type="button" data-squish data-seeds aria-label="Squish the lemon"><svg class="icon"><use href="#lemon"></use></svg></button>
+          </div>
+        </div>
+      </div>
+    </section>
 
-<section class="section" id="pour-section"><div class="wrap pour-grid">
-  <div>
-    <h2>Pour yourself one.</h2>
-    <p>Tap pour until the glass is full. Then drink up and go again.</p>
-    <button class="btn" id="pour">Pour</button>
-    <button class="btn btn-outline btn-sm" id="drink">Drink up</button>
-    <p class="pour-msg" id="pour-msg" aria-live="polite">Empty glass. Sad.</p>
-  </div>
-  <svg class="glass" viewBox="0 -20 170 220" role="img" aria-label="A glass filling with lemonade">
-    <defs><clipPath id="glass-clip"><path d="M20 10h120l-14 180H34z"/></clipPath></defs>
-    <path class="inside" d="M20 10h120l-14 180H34z"/>
-    <g clip-path="url(#glass-clip)"><rect class="liquid" x="0" y="10" width="170" height="190"/></g>
-    <path class="ln" d="M20 10h120l-14 180H34z"/>
-    <use class="slice" href="#lemon" x="96" y="-16" width="64" height="64" style="color:var(--ink)"/>
-  </svg>
-</div></section>
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span>Ice cold</span><svg class="icon icon-sm"><use href="#lemon"></use></svg>
+        <span>Fresh squeezed</span><svg class="icon icon-sm"><use href="#sun"></use></svg>
+        <span>Cash, coins and high fives</span><svg class="icon icon-sm"><use href="#heart"></use></svg>
+      </div>
+    </div>
 
-<svg class="squiggle"><rect width="100%" height="24" fill="url(#wave)"/></svg>
+    <section class="section" id="pour-section">
+      <div class="wrap pour-grid">
+        <div>
+          <h2>Pour yourself one.</h2>
+          <p>Tap pour until the glass is full. Then drink up and go again.</p>
+          <button class="btn" id="pour-button" type="button">Pour</button>
+          <button class="btn btn-outline btn-sm" id="drink-button" type="button">Drink up</button>
+          <p class="pour-message" id="pour-message" aria-live="polite">Empty glass. Sad.</p>
+        </div>
+        <svg class="glass" viewBox="0 -20 170 220" role="img" aria-label="A glass filling with lemonade">
+          <defs>
+            <clipPath id="glass-clip"><path d="M20 10h120l-14 180H34z"></path></clipPath>
+          </defs>
+          <path class="inside" d="M20 10h120l-14 180H34z"></path>
+          <g clip-path="url(#glass-clip)"><rect class="liquid" x="0" y="10" width="170" height="190"></rect></g>
+          <path class="ln" d="M20 10h120l-14 180H34z"></path>
+          <use class="slice" href="#lemon" x="96" y="-16" width="64" height="64" style="color:var(--ink)"></use>
+        </svg>
+      </div>
+    </section>
 
-<section class="section"><div class="wrap">
-  <h2>Stands you’ve probably met.</h2>
-  <div class="grid"><article class="stand-card" tabindex="0" aria-label="Maple Street Sippers, tap to flip"><div class="card-inner"><div class="card-face card-front"><svg class="icon icon-lg" style="--icon-fill:var(--lemon)"><use href="#lemon"/></svg><h3>Maple Street Sippers</h3><p class="town">Maple Street</p></div><div class="card-face card-back"><p>Two siblings, one cooler, zero change. They make the math fun.</p><p class="price">50¢ a cup</p></div></div></article><article class="stand-card" tabindex="0" aria-label="Porch Light Pitcher, tap to flip"><div class="card-inner"><div class="card-face card-front"><svg class="icon icon-lg" style="--icon-fill:var(--leaf)"><use href="#leaf"/></svg><h3>Porch Light Pitcher</h3><p class="town">Elm Court</p></div><div class="card-face card-back"><p>Grandma runs the till. The mint is from the backyard and the gossip is free.</p><p class="price">75¢ a cup</p></div></div></article><article class="stand-card" tabindex="0" aria-label="The Sour Squad, tap to flip"><div class="card-inner"><div class="card-face card-front"><svg class="icon icon-lg" style="--icon-fill:var(--pink)"><use href="#cup"/></svg><h3>The Sour Squad</h3><p class="town">Birch Lane</p></div><div class="card-face card-back"><p>Extra tart, extra loud. Laugh at a joke, get a free refill.</p><p class="price">25¢ a cup</p></div></div></article></div>
-  <a class="btn btn-outline" href="gallery.html">See them all</a>
-</div></section>
+    <svg class="squiggle"><rect width="100%" height="24" fill="url(#wave)"></rect></svg>
 
-<section class="section section-lemon"><div class="wrap">
-  <h2>Go on, poke them.</h2>
-  <div class="shelf">
-    <button class="btn btn-outline btn-round" data-squish data-seeds aria-label="Lemon"><svg class="icon"><use href="#lemon"/></svg></button>
-    <button class="btn btn-outline btn-round" data-squish data-seeds aria-label="Sun"><svg class="icon"><use href="#sun"/></svg></button>
-    <button class="btn btn-outline btn-round" data-squish data-seeds aria-label="Glass"><svg class="icon"><use href="#cup"/></svg></button>
-    <button class="btn btn-outline btn-round" data-squish data-seeds aria-label="Heart"><svg class="icon"><use href="#heart"/></svg></button>
-    <button class="btn btn-outline btn-round" data-squish data-seeds aria-label="Leaf"><svg class="icon"><use href="#leaf"/></svg></button>
-    <!-- letitblow (fizz thing) -->
-    <button class="btn btn-pink" id="letitblow">Let it blow</button>
-  </div>
-  <p>Found a stand on your street? Buy a cup, leave a tip and say something nice about the sign.</p>
-  <a class="btn btn-outline" href="help.html">How to help</a>
-</div></section>
-</main>
-<footer class="site-footer"><svg class="squiggle"><rect width="100%" height="24" fill="url(#wave)"/></svg><div class="wrap"><p>Made with too many lemons <svg class="icon icon-sm" style="--icon-fill:var(--pink)"><use href="#heart"/></svg></p><p>Not tied to any one stand. Go buy a cup from yours.</p></div></footer>
-<script src="js/icons.js"></script><script src="js/main.js"></script>
-</body></html>
+    <section class="section">
+      <div class="wrap">
+        <h2>Stands you’ve probably met.</h2>
+        <div class="grid">
+          <article class="stand-card" role="button" tabindex="0" aria-pressed="false" aria-label="Maple Street Sippers, tap to flip">
+            <div class="card-inner">
+              <div class="card-face card-front"><svg class="icon icon-lg" style="--icon-fill:var(--lemon)"><use href="#lemon"></use></svg><h3>Maple Street Sippers</h3><p class="town">Maple Street</p></div>
+              <div class="card-face card-back"><p>Two siblings, one cooler, zero change. They make the math fun.</p><p class="price">50¢ a cup</p></div>
+            </div>
+          </article>
+          <article class="stand-card" role="button" tabindex="0" aria-pressed="false" aria-label="Porch Light Pitcher, tap to flip">
+            <div class="card-inner">
+              <div class="card-face card-front"><svg class="icon icon-lg" style="--icon-fill:var(--leaf)"><use href="#leaf"></use></svg><h3>Porch Light Pitcher</h3><p class="town">Elm Court</p></div>
+              <div class="card-face card-back"><p>Grandma runs the till. The mint is from the backyard and the gossip is free.</p><p class="price">75¢ a cup</p></div>
+            </div>
+          </article>
+          <article class="stand-card" role="button" tabindex="0" aria-pressed="false" aria-label="The Sour Squad, tap to flip">
+            <div class="card-inner">
+              <div class="card-face card-front"><svg class="icon icon-lg" style="--icon-fill:var(--pink)"><use href="#cup"></use></svg><h3>The Sour Squad</h3><p class="town">Birch Lane</p></div>
+              <div class="card-face card-back"><p>Extra tart, extra loud. Laugh at a joke, get a free refill.</p><p class="price">25¢ a cup</p></div>
+            </div>
+          </article>
+        </div>
+        <a class="btn btn-outline" href="gallery.html">See them all</a>
+      </div>
+    </section>
+
+    <section class="section section-lemon">
+      <div class="wrap">
+        <h2>Go on, poke them.</h2>
+        <div class="shelf">
+          <button class="btn btn-outline btn-round" data-squish data-seeds aria-label="Lemon" type="button"><svg class="icon"><use href="#lemon"></use></svg></button>
+          <button class="btn btn-outline btn-round" data-squish data-seeds aria-label="Sun" type="button"><svg class="icon"><use href="#sun"></use></svg></button>
+          <button class="btn btn-outline btn-round" data-squish data-seeds aria-label="Glass" type="button"><svg class="icon"><use href="#cup"></use></svg></button>
+          <button class="btn btn-outline btn-round" data-squish data-seeds aria-label="Heart" type="button"><svg class="icon"><use href="#heart"></use></svg></button>
+          <button class="btn btn-outline btn-round" data-squish data-seeds aria-label="Leaf" type="button"><svg class="icon"><use href="#leaf"></use></svg></button>
+          <button class="btn btn-pink" id="let-it-blow" type="button">Let it blow</button>
+        </div>
+        <p>Found a stand on your street? Buy a cup, leave a tip and say something nice about the sign.</p>
+        <a class="btn btn-outline" href="help.html">How to help</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <svg class="squiggle"><rect width="100%" height="24" fill="url(#wave)"></rect></svg>
+    <div class="wrap">
+      <p>Made with too many lemons <svg class="icon icon-sm" style="--icon-fill:var(--pink)"><use href="#heart"></use></svg></p>
+      <p>Not tied to any one stand. Go buy a cup from yours.</p>
+    </div>
+  </footer>
+
+  <!-- Scroll-to-top button -->
+  <button class="btn btn-round scroll-top-button" id="scroll-to-top" type="button" aria-label="Scroll to top" title="Back to top">
+    <svg class="scroll-top-icon" viewBox="0 0 24 24"><path d="M12 19V5M5 12l7-7 7 7"></path></svg>
+  </button>
+
+  <!-- Background music file -->
+  <audio id="background-music" src="audio/background_music.mp3" loop preload="none"></audio>
+  <script src="js/icons.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

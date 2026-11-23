@@ -1,32 +1,76 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="css/style.css"><title>Help out | Lemon Aid</title></head><body>
-<header class="site-header"><div class="wrap">
-  <a class="logo" href="index.html"><svg class="icon icon-md"><use href="#lemon"/></svg>Lemon Aid</a>
-  <nav><ul class="nav">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="gallery.html">Stands</a></li>
-    <li><a href="help.html" aria-current="page">Help out</a></li>
-    <li><button class="btn btn-sm btn-outline" id="darkk">Dark</button></li>
-  </ul></nav>
-</div></header>
-<main>
-<section class="page-head"><div class="wrap">
-  <h1>How to help your local stand.</h1>
-  <p>It costs about a dollar and makes someone’s whole weekend.</p>
-</div></section>
-<section class="section" style="padding-top:1rem"><div class="wrap"><div class="tips">
-  <article class="tip"><svg class="icon icon-lg" data-squish data-seeds><use href="#cup"/></svg><h3>Buy a cup</h3><p>Pay the asking price, then tip a quarter more. Best deal in town.</p></article>
-  <article class="tip"><svg class="icon icon-lg" data-squish data-seeds><use href="#heart"/></svg><h3>Say something nice</h3><p>Compliment the sign, the pitcher, the hustle. Confidence is the secret ingredient.</p></article>
-  <article class="tip"><svg class="icon icon-lg" data-squish data-seeds><use href="#sun"/></svg><h3>Come back</h3><p>Regulars turn a slow Saturday into a good one. Bring a friend.</p></article>
-  <article class="tip"><svg class="icon icon-lg" data-squish data-seeds><use href="#leaf"/></svg><h3>Lend a hand</h3><p>Spare ice, a folding table or a shady spot on your lawn goes a long way.</p></article>
-</div></div></section>
-<section class="section section-lemon"><div class="wrap counter">
-  <h2>The honor-system cup counter</h2>
-  <p>Bought one lately? Tap it. Nobody’s checking, but the lemons know.</p>
-  <div class="count" id="cups" aria-live="polite">0</div>
-  <button class="btn btn-outline" id="cup-btn" data-squish data-seeds><svg class="icon icon-sm"><use href="#cup"/></svg>I bought a cup</button>
-</div></section>
-</main>
-<footer class="site-footer"><svg class="squiggle"><rect width="100%" height="24" fill="url(#wave)"/></svg><div class="wrap"><p>Made with too many lemons <svg class="icon icon-sm" style="--icon-fill:var(--pink)"><use href="#heart"/></svg></p><p>Not tied to any one stand. Go buy a cup from yours.</p></div></footer>
-<script src="js/icons.js"></script><script src="js/main.js"></script>
-</body></html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Help out | Lemon Aid</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="logo" href="index.html"><svg class="icon icon-md"><use href="#lemon"></use></svg>Lemon Aid</a>
+      <nav aria-label="Main navigation">
+        <ul class="nav">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="gallery.html">Stands</a></li>
+          <li><a href="help.html" aria-current="page">Help out</a></li>
+          <!-- Music button and volume slider -->
+          <li class="music-controls">
+            <button class="btn btn-sm btn-outline" id="music-button" type="button">Play music</button>
+            <input id="volume-slider" type="range" min="0" max="100" value="50" aria-label="Music volume">
+          </li>
+          <li><button class="btn btn-sm btn-outline" id="dark-toggle" type="button">Dark</button></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-head">
+      <div class="wrap">
+        <h1>How to help your local stand.</h1>
+        <p>It costs about a dollar and makes someone’s whole weekend.</p>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top:1rem">
+      <div class="wrap">
+        <div class="tips">
+          <article class="tip"><svg class="icon icon-lg" data-squish data-seeds><use href="#cup"></use></svg><h3>Buy a cup</h3><p>Pay the asking price, then tip a quarter more. Best deal in town.</p></article>
+          <article class="tip"><svg class="icon icon-lg" data-squish data-seeds><use href="#heart"></use></svg><h3>Say something nice</h3><p>Compliment the sign, the pitcher, the hustle. Confidence is the secret ingredient.</p></article>
+          <article class="tip"><svg class="icon icon-lg" data-squish data-seeds><use href="#sun"></use></svg><h3>Come back</h3><p>Regulars turn a slow Saturday into a good one. Bring a friend.</p></article>
+          <article class="tip"><svg class="icon icon-lg" data-squish data-seeds><use href="#leaf"></use></svg><h3>Lend a hand</h3><p>Spare ice, a folding table or a shady spot on your lawn goes a long way.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-lemon">
+      <div class="wrap counter">
+        <h2>The honor-system cup counter</h2>
+        <p>Bought one lately? Tap it. Nobody’s checking, but the lemons know.</p>
+        <div class="count" id="cups" aria-live="polite">0</div>
+        <button class="btn btn-outline" id="cup-button" data-squish data-seeds type="button"><svg class="icon icon-sm"><use href="#cup"></use></svg>I bought a cup</button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <svg class="squiggle"><rect width="100%" height="24" fill="url(#wave)"></rect></svg>
+    <div class="wrap">
+      <p>Made with too many lemons <svg class="icon icon-sm" style="--icon-fill:var(--pink)"><use href="#heart"></use></svg></p>
+      <p>Not tied to any one stand. Go buy a cup from yours.</p>
+    </div>
+  </footer>
+
+  <!-- Scroll-to-top button -->
+  <button class="btn btn-round scroll-top-button" id="scroll-to-top" type="button" aria-label="Scroll to top" title="Back to top">
+    <svg class="scroll-top-icon" viewBox="0 0 24 24"><path d="M12 19V5M5 12l7-7 7 7"></path></svg>
+  </button>
+
+  <!-- Background music file -->
+  <audio id="background-music" src="audio/background_music.mp3" loop preload="none"></audio>
+  <script src="js/icons.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
